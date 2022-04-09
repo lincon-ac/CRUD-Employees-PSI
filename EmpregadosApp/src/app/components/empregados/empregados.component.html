@@ -1,0 +1,127 @@
+<div class="container p-5" *ngIf="visibilidadeTabela">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 pt-2">
+                <h6>Agência: 3366 | Cidade de Pinheiros</h6>
+            </div>
+            <div align="right" class="col-4 pb-3">
+                <img src="../../../assets/logo-caixa.png" width="50%" height="auto" alt="logo-caixa">
+            </div>
+        </div>
+    </div>
+    <div class="border boder-light rounded p-5">
+        <div>
+            <button type="button" class="btn btn-sm btn-secondary" (click)="ExibirFormularioCadastro()">Novo(a) Empregado(a)</button>
+        </div>
+
+        <hr/>
+
+        <!--Sempre que houver alterações nos dados da tabela, a mesma será atualizada automaticamente-->
+        <table class="table table-striped table-hover table-sm" *ngIf="empregados">
+            <!--Table row-->
+            <tr class="thead-light">
+                <!--Table head-->
+                <th>Matrícula</th>
+                <th>Nome</th>
+                <th>Data Nascimento</th>
+                <th>Função</th>
+                <th>Escolaridade</th>
+                <th>Ações</th>
+            </tr>
+
+            <!--Fazer loop na variável para exibir todos os dados-->
+            <!--Table row-->
+            <tr *ngFor="let empregado of empregados">
+                <!--Table data-->
+                <td>{{empregado.matricula}}</td>
+                <td>{{empregado.nome}}</td>
+                <td>{{empregado.dataNascimento}}</td>
+                <td>{{empregado.funcao}}</td>
+                <td>{{empregado.escolaridade}}</td>
+
+                <td>
+                    <button type="button" class="btn btn-sm btn-outline-info" (click)="ExibirFormularioAtualizacao(empregado.id)">Editar</button> |
+                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="ExibirConfirmacaoExclusao(empregado.id, empregado.nome, conteudoModal)">Excluir</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="container p-5" *ngIf="visibilidadeFormulario">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 pt-2">
+                <h6>Agência: 3366 | Cidade de Pinheiros</h6>
+            </div>
+            <div align="right" class="col-4 pb-3">
+                <img src="../../../assets/logo-caixa.png" width="50%" height="auto" alt="logo-caixa">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!--A div será exibida apenas se o formulário estiver pronto para uso-->
+        <div class="col-6 border boder-light rounded p-5 shadow" *ngIf="formulario">
+            <h6>{{tituloFormulario}}</h6>
+            <hr/>
+            <form [formGroup]="formulario" (ngSubmit)="EnviarFormulario()">
+
+                <input type="hidden" class="form-control form-control-sm" formControlName="agencia" value=3366 />
+
+                <div class="form-group">
+                    <label>Matrícula</label>
+                    <input type="text" class="form-control form-control-sm" formControlName="matricula" />
+                </div>
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control form-control-sm" formControlName="nome" />
+                </div>
+
+                <div class="form-group">
+                    <label>Data Nascimento</label>
+                    <input type="text" class="form-control form-control-sm" formControlName="dataNascimento" />
+                </div>
+
+                <div class="form-group">
+                    <label>Escolaridade</label>
+                    <input type="text" class="form-control form-control-sm" formControlName="escolaridade" />
+                </div>
+
+                <div class="form-group">
+                    <label>Função</label>
+                    <input type="text" class="form-control form-control-sm" formControlName="funcao" />
+                </div>
+
+                <br/>
+                <div class="container p-0">
+                    <div class="row">
+                        <div class="pl-1">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Salvar</button>
+                            <button type="button" class="btn btn-sm btn-light" (click)="Voltar()">Voltar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!--#conteudoModal: é um atributo que está dando ao template e assim conseguimos passar ele para a função-->
+<ng-template #conteudoModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Confirmação de Exclusão</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        Continuar com a exclusão do(a) empregado(a) {{nome}}
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modalRef.hide()">Não</button>
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" (click)="ExcluirEmpregado(id)">Sim</button>
+    </div>
+</ng-template>
