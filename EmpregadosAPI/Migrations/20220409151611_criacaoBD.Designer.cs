@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmpregadosAPI.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220407193004_criacaoBD")]
+    [Migration("20220409151611_criacaoBD")]
     partial class criacaoBD
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

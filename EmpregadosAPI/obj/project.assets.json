@@ -2058,19 +2058,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Isis\\.nuget\\packages\\": {}
+    "C:\\Users\\linco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isis\\Documents\\GitHub\\CRUD-Empregados\\EmpregadosAPI\\EmpregadosAPI.csproj",
+      "projectUniqueName": "C:\\Users\\linco\\OneDrive\\Área de Trabalho\\CRUDEmpregados\\EmpregadosAPI\\EmpregadosAPI.csproj",
       "projectName": "EmpregadosAPI",
-      "projectPath": "C:\\Users\\Isis\\Documents\\GitHub\\CRUD-Empregados\\EmpregadosAPI\\EmpregadosAPI.csproj",
-      "packagesPath": "C:\\Users\\Isis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Isis\\Documents\\GitHub\\CRUD-Empregados\\EmpregadosAPI\\obj\\",
+      "projectPath": "C:\\Users\\linco\\OneDrive\\Área de Trabalho\\CRUDEmpregados\\EmpregadosAPI\\EmpregadosAPI.csproj",
+      "packagesPath": "C:\\Users\\linco\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\linco\\OneDrive\\Área de Trabalho\\CRUDEmpregados\\EmpregadosAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Isis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\linco\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

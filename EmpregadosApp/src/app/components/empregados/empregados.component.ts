@@ -45,7 +45,7 @@ export class EmpregadosComponent implements OnInit {
     this.tituloFormulario = 'Novo(a) Empregado(a)';
     this.formulario = new FormGroup({
       //FormControls: são os inputs. O formGroup agrupa todos
-      agencia: new FormControl(3306),
+      agencia: new FormControl(3366),
       matricula: new FormControl(null),
       nome: new FormControl(null),
       dataNascimento: new FormControl(null),
